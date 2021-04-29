@@ -25,15 +25,18 @@ Client.init(
             unique: true,
             validate: {
                 isEmail: true
-            },
-            password: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    len: [8]
-                }
             }
+                
         },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [8]
+           }
+        }
+    },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
@@ -41,3 +44,5 @@ Client.init(
         modelName: 'client'
     }
 );
+
+model.exports = Client;
