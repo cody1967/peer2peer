@@ -18,13 +18,13 @@ Package.belongsTo(Driver, {
     foreignKey: 'driver_id'
 });
 
-Client.hasMany(Driver, {
+Client.belongsToMany(Driver, {
     through: Package,
     as: 'assigned_driver',
     foreignKey: 'client_id'
 });
 
-Driver.hasMany(Client, {
+Driver.belongsToMany(Client, {
     through: Package,
     as: 'assigned_client',
     foreignKey: 'driver_id'
