@@ -1,4 +1,5 @@
-function initMap() {
+
+function initMap() { 
   
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7.5,
@@ -21,7 +22,7 @@ function initMap() {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
-  console.log(map)
+  
   document.getElementsByClassName("map").append(map)
 
 }
@@ -52,4 +53,3 @@ const locations = [
   { lat: -43.999792, lng: 170.463352 },
 ];
 initMap();
-console.log(locations)

@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS peer_2_peer;
+
+CREATE DATABASE peer_2_peer;
