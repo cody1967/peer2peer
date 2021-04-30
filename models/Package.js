@@ -79,4 +79,4 @@ Package.init(
     }
 );
 
-model.exports = Package;
+module.exports = Package;
