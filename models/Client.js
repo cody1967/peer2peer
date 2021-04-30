@@ -45,4 +45,4 @@ Client.init(
     }
 );
 
-model.exports = Client;
+module.exports = Client;

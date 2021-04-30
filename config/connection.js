@@ -1,4 +1,9 @@
+const Sequelize = require('sequelize');
+
 let sequelize;
+
+
+require('dotenv').config();
 
 sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.DB_PW, {
     host: 'localhost',
