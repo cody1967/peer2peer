@@ -24,5 +24,21 @@
   <script type="text/javaScript" src="../api/map.js" async>
   </script>
 
+  <script>
+    const successCallback = (position) => {
+      console.log(position);
+    };
+
+    const errorCallback = (error) => {
+      console.error(error);
+    };
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+      timeout: 5000
+    });
+  
+  </script>
+
 </body>
 </html>
