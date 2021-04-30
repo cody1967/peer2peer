@@ -53,7 +53,7 @@ Package.init(
         },
         item: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         driver_id: {
             type: DataTypes.INTEGER,
