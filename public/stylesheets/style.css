@@ -19,5 +19,10 @@
   align-self: center;
   justify-self: center;
 }
-
+#Map {
+  height: 400px;
+  width: 200px;
+  align-self: center;
+  justify-self: center;
+}
 

@@ -2,7 +2,7 @@
 function initMap() { 
   
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7.5,
+    zoom: 8,
     center: { lat: 39.73215, lng: -111.12028 },
   });
   // Create an array of alphabetical characters used to label the markers.
@@ -26,6 +26,7 @@ function initMap() {
   document.getElementsByClassName("map").append(map)
 
 }
+//  set locations for the input bars on the html page 
 
 const locations = [
   { lat: -31.56391, lng: 147.154312 },
