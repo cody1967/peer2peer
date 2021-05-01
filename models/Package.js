@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, DATEONLY, DATE, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Package extends Model {}
@@ -10,6 +10,10 @@ Package.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        },
+        item: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         pick_up_state: {
             type: DataTypes.STRING,
@@ -47,13 +51,8 @@ Package.init(
             type: DataTypes.DATEONLY,
             allowNull: false,
             validate: {
-                isDate: true,
-                isAfter: DataTypes.NOW
+                isDate: true
             }
-        },
-        item: {
-            type: DataTypes.STRING,
-            allowNull: false
         },
         driver_id: {
             type: DataTypes.INTEGER,
