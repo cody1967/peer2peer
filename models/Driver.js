@@ -65,4 +65,4 @@ Driver.init(
     }
 );
 
-model.exports = Driver;
+module.exports = Driver;
