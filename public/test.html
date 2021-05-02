@@ -1,4 +1,87 @@
-<section class="hero is-fullheight-with-navbar">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>peer2peer delivery</title>
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="/your-path-to-fontawesome/css/all.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item is-size-5 has-text-weight-bold">
+        <img src="/public/stylesheets/fast.svg" width="75" height="5">
+        peer2peer
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+
+        <a class="navbar-item" id="lanuchModal">
+          Pricing
+        </a>
+        <div id="modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-24x24">
+                    <img src="/public/stylesheets/dollar-sign-solid.svg" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Pricing</strong> <small></small>
+                      <br>
+                      Pricing varies per Mile.
+                      1 mile = $
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-dark">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+  <!-- {{{body}}} -->
+
+  <section class="hero is-fullheight-with-navbar">
     <div class="hero-body ">
       <div class="columns">
         <div class="column">
@@ -71,3 +154,38 @@
 
           </div>
   </section>
+
+
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>peer2peer</strong> by Group 2</a>
+
+      </p>
+
+  </footer>
+
+  <!-- {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}} -->
+
+  <script>
+    $("#lanuchModal").click(function () {
+
+      $(".modal").addClass("is-active");
+
+    });
+
+
+    $(".modal-close").click(function () {
+
+      $(".modal").removeClass("is-active");
+
+    });
+
+  </script>
+</body>
+
+</html>
