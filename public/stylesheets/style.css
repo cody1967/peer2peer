@@ -1,5 +1,4 @@
-
-/* {
+* { 
   margin:0;
   padding:0;
   box-sizing:border-box;
@@ -18,7 +17,14 @@
   border: 1px solid rgb(18, 22, 27);
   align-self: center;
   justify-self: center;
-} */
+
+}
+#Map {
+  height: 400px;
+  width: 200px;
+  align-self: center;
+  justify-self: center;
+}
 
 .hero-body {
   background-color: #333;
@@ -32,6 +38,5 @@
 #logo {
   color: #FF8C00;
 };
-
 
 
