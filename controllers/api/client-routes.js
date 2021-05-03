@@ -57,6 +57,32 @@ router.post('/', (req, res) => {
     });
 });
 
+// login
+router.post('/login', (req, res) => {
+    Client.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(dbClientData =>{
+        if(!dbClientData) {
+            res.status(400).json({ message: 'No client exists with that email address!' });
+            return;
+        }
+        const validPassword = dbClientData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
+    });
+});
+
+//logout
+router.post('/logout', (req, res) => {
+    
+})
+
 // update client info
 router.put('/:id', (req, res) => {
     Client.update(req.body, {
