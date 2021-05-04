@@ -8,7 +8,7 @@ async function orderFormHandler(event) {
   // ];
 
   if (order_text) {
-    const response = await fetch('/api/package', {
+    const response = await fetch('/api/packages', {
       method: 'POST',
       body: JSON.stringify({
         pick_up_street,

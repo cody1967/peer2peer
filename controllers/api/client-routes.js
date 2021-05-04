@@ -63,14 +63,15 @@ router.post('/login', (req, res) => {
         where: {
             email: req.body.email
         }
-    })
-    .then(dbClientData =>{
-        if(!dbClientData) {
-            res.status(400).json({ message: 'No client exists with that email address!' });
-            return;
+    }).then(dbClientData => {
+        if (!dbClientData) {
+          res.status(400).json({ message: 'No client with that email address!' });
+          return;
         }
+    
+        // Verify user
         const validPassword = dbClientData.checkPassword(req.body.password);
-
+    
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
