@@ -12,19 +12,19 @@
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title">
-                  Welcome {{Driver.first_name}}{{Driver.last_name}}
+                  Welcome {{driver.first_name}}{{driver.last_name}}
                 </p>
               </header>
               <div class="card-content">
                 <div class="content">
                   <p>JOB LIST</p>
-                  <ol>Package ID: {{Package.id}}</p>
-                    <ol>Pickup Location:{{Package.pick_up_street}} {{Package.pick_up_city}}, {{Package.pick_up_state}}
-                      {{Package.pick_up_zip}}</p>
-                      <p>Drop Off Location:{{Package.drop_off_street}} {{Package.drop_off_city}},
-                        {{Package.drop_off_state}} {{Package.drop_off_zip}}</p>
-                      <p>Date and Time:{{Package.deliver_by}}</p>
-                      <p>Contact: {{Package.client_id}}{{Client.first_name}} {{Client.last_name}}</p>
+                  <ol>package ID: {{package.id}}</p>
+                    <ol>Pickup Location:{{package.pick_up_street}} {{package.pick_up_city}}, {{package.pick_up_state}}
+                      {{package.pick_up_zip}}</p>
+                      <p>Drop Off Location:{{package.drop_off_street}} {{package.drop_off_city}},
+                        {{package.drop_off_state}} {{package.drop_off_zip}}</p>
+                      <p>Date and Time:{{package.deliver_by}}</p>
+                      <p>Contact: {{package.client_id}}{{client.first_name}} {{client.last_name}}</p>
                     </ol>
                     <div class="control">
                       <label class="radio">
@@ -45,7 +45,7 @@
                       <footer class="card-footer">
                         <a href="#" class="card-footer-item">Log Out</a>
                         <!-- <a href="#" class="card-footer-item">Delivery Complete</a> -->
-                        <!-- <a href="#" class="card-footer-item">Want to be a Driver?</a> -->
+                        <!-- <a href="#" class="card-footer-item">Want to be a driver?</a> -->
                       </footer>
                     </div>
                 </div>
