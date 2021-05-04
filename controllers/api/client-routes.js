@@ -76,6 +76,7 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
+        res.json({ client: dbClientData, message: 'Log in successful!' });
     });
 });
 
