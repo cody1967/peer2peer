@@ -36,7 +36,7 @@ async function orderFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.reload();
+      document.location.replace('/clients');
     } else {
       alert(response.statusText);
     }
