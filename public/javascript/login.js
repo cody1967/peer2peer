@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace('/order');
     } else {
       alert(response.statusText);
     }
