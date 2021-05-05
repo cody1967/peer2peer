@@ -1,4 +1,4 @@
-const { Model, DataTypes, DATEONLY, DATE, Sequelize } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Package extends Model {}

@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace('/packages');
     } else {
       alert(response.statusText);
     }
@@ -25,12 +25,12 @@ async function loginFormHandler(event) {
 async function signupFormHandler(event) {
   event.preventDefault();
 
-  const firstname = document.querySelector('#firstname-signup').value.trim();
-  const lastname = document.querySelector('#lastname-signup').value.trim();
+  const first_name = document.querySelector('#firstname-signup').value.trim();
+  const last_name = document.querySelector('#lastname-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (firstname && lastname && email && password) {
+  if (first_name && last_name && email && password) {
     const response = await fetch('/api/clients', {
       method: 'post',
       body: JSON.stringify({
@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace('/packages');
     } else {
       alert(response.statusText);
     }
