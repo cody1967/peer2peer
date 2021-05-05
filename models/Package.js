@@ -47,6 +47,15 @@ Package.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
+        drop_off_lat: {
+            type: DataTypes.DECIMAL,
+            allowNull: false    
+        },
+        drop_off_lng: {
+            type: DataTypes.DECIMAL,
+            allowNull: false    
+        },
+        
         deliver_by: {
             type: DataTypes.DATEONLY,
             allowNull: false,
