@@ -1,37 +1,39 @@
 {
-	"name": "peer2peer",
-	"version": "1.0.0",
-	"description": "A peer to peer package delivery service.",
-	"main": "server.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node server.js",
-		"serve": "parcel serve src/test.html"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/cody1967/peer2peer.git"
-	},
-	"keywords": [
-		"peer",
-		"to",
-		"peer",
-		"delivery",
-		"service"
-	],
-	"author": "Clint Hansen",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/cody1967/peer2peer/issues"
-	},
-	"homepage": "https://github.com/cody1967/peer2peer#readme",
-	"dependencies": {
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"handlebars": "^4.7.7",
-		"mysql2": "^2.2.5",
-		"sequelize": "^6.6.2",
-		"parcel": "^1.12.4",
-		"sass": "^1.26.9"
-	}
+  "name": "peer2peer",
+  "version": "1.0.0",
+  "description": "A peer to peer package delivery service.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cody1967/peer2peer.git"
+  },
+  "keywords": [
+    "peer",
+    "to",
+    "peer",
+    "delivery",
+    "service"
+  ],
+  "author": "Clint Hansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cody1967/peer2peer/issues"
+  },
+  "homepage": "https://github.com/cody1967/peer2peer#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "https-localhost": "^4.6.4"
+  }
 }

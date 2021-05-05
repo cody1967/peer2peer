@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Client, Driver, Package } = require('../../models');
 
+// get all clients
 router.get('/', (req, res) => {
     Client.findAll({
         attributes: { exclude: ['password'] }
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get single client by id
 router.get('/:id', (req, res) => {
     Client.findOne({
         attributes: { exclude: ['password'] },
@@ -21,9 +23,9 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Driver,
-                attributes: ['first_name', 'last_name'],
+                attributes: ['first_name', 'last_name', 'email', 'cell_number'],
                 through: Package,
-                as: 'assigned_drivers'
+                as: 'assigned_driver'
             }
         ]
     })
@@ -40,6 +42,7 @@ router.get('/:id', (req, res) => {
     });
 });  
 
+// create a client
 router.post('/', (req, res) => {
     Client.create({
         first_name: req.body.first_name,
@@ -54,8 +57,73 @@ router.post('/', (req, res) => {
     });
 });
 
+// login
+router.post('/login', (req, res) => {
+    Client.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(dbClientData => {
+        if (!dbClientData) {
+          res.status(400).json({ message: 'No client with that email address!' });
+          return;
+        }
+    
+        // Verify user
+        const validPassword = dbClientData.checkPassword(req.body.password);
+    
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
+    });
+});
 
+//logout
+router.post('/logout', (req, res) => {
+    
+})
 
+// update client info
+router.put('/:id', (req, res) => {
+    Client.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbClientData => {
+        if (!dbClientData[0]) {
+            res.status(404).json({ message: 'No client found with this id' });
+            return;
+        }
+        res.json(dbClientData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    }); 
+});
+
+// delete a client
+router.delete('/:id', (req, res) => {
+    Client.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbClientData => {
+        if (!dbClientData) {
+            res.status(404).json({ message: 'No client found with this id' });
+            return;
+        }
+        res.json(dbClientData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
 module.exports = router;
