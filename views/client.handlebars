@@ -17,10 +17,12 @@
               </header>
               <div class="card-content">
                 <div class="content">
-              
-                  <p>Your package {{package.id}} is scheduled to be delivered</p>
-                  <p> by {{package.driver_id}} {{client.assigned_driver.first_name}}
-                    {{client.assigned_driver.last_name}} </p>
+                  {{#each client.assigned_driver}}
+                  <p>Your package {{this.package.id}} is scheduled to be delivered</p>
+                  
+                  <p> by {{this.first_name}}
+                    {{this.last_name}} </p>
+                    {{/each}}
                   {{!-- <p> by {{package.deliver_by}}</p> --}}
                   <p> Thank you for using peer2peer!</p>
                   </p>

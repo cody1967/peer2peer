@@ -11,9 +11,9 @@ async function orderFormHandler(event) {
   const drop_off_state = document.querySelector('#drop_off_state').value;
   const drop_off_zip = document.querySelector('#drop_off_zip').value.trim();
 
-  // const driver_id = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
+  const client_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
   if (item && pick_up_street && pick_up_city && pick_up_state && pick_up_zip && drop_off_street && drop_off_city && drop_off_state && drop_off_zip) {
     const response = await fetch('/api/packages', {
@@ -36,12 +36,21 @@ async function orderFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/clients/2');
+      document.location.replace(`/clients/${client_id}`);
     } else {
       alert(response.statusText);
     }
   }
 }
+
+function myPackagesHandler(event) {
+  event.preventDefault();
+  document.location.replace(`/clients/${client_id}`)
+}
+
+
+const myPackages = document.querySelector('#my-packages');
+myPackages.addEventListener('click', myPackagesHandler)
 
 const form = document.querySelector('.pickup-form');
 form.addEventListener('submit', orderFormHandler);

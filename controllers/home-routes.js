@@ -9,10 +9,11 @@ router.get('/homepage', (req, res) => {
 });
 
 router.get('/clients/:id', (req, res) => {
+  console.log(req.session.user_id)
   Client.findOne({
       attributes: { exclude: ['password'] },
       where: {
-          id: req.params.id
+          id: req.session.user_id
       },
       include: [
           {
