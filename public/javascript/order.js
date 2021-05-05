@@ -36,8 +36,7 @@ async function orderFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/clients/:id');
-      console.log('howdy')
+      document.location.replace('/clients/2');
     } else {
       alert(response.statusText);
     }
