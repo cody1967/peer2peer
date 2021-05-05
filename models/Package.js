@@ -1,4 +1,4 @@
-const { Model, DataTypes, DATEONLY, DATE, Sequelize } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Package extends Model {}
@@ -47,22 +47,13 @@ Package.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        drop_off_lat: {
-            type: DataTypes.DECIMAL,
-            allowNull: false    
-        },
-        drop_off_lng: {
-            type: DataTypes.DECIMAL,
-            allowNull: false    
-        },
-        
-        deliver_by: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            validate: {
-                isDate: true
-            }
-        },
+        // deliver_by: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: true,
+        //     validate: {
+        //         isDate: true
+        //     }
+        // },
         driver_id: {
             type: DataTypes.INTEGER,
             references: {

@@ -32,6 +32,7 @@ router.get('/:id', (req, res) => {
 
 // create a package
 router.post('/', (req, res) => {
+    console.log(req.body)
     Package.create(req.body)
     .then(dbPackageData => res.json(dbPackageData))
     .catch(err => {
