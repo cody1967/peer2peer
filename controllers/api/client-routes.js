@@ -50,11 +50,15 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-        .then(dbClientData => res.json(dbClientData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+    .then(dbClientData => {
+        req.session.save(() => {
+            req.session.id = dbClientData.id;
+            req.session.email = dbClientData.email;
+            req.session.loggedIn = true;
+
+            res.json(dbClientData);
         });
+    });
 });
 
 // login
