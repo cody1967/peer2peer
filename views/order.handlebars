@@ -6,6 +6,7 @@
           <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </figure>
       </div>
+      {{!-- {{#if loggedIn}} --}}
       <div class="columns">
         <div class="column is-mobile">
           <div class="column is-half control has-icons-left has-icons-right">
@@ -68,9 +69,11 @@
               </div>
             </form>
           </div>
+          {{!-- {{/if}} --}}
 
 
         </div>
 </section>
-
+{{#if loggedIn}}
 <script src="/javascript/order.js"></script>
+{{/if}}

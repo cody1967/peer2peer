@@ -17,17 +17,19 @@
               </header>
               <div class="card-content">
                 <div class="content">
+              
                   <p>Your package {{package.id}} is scheduled to be delivered</p>
-                  <p> by {{package.driver_id}}{{driver.first_name}}{{driver.last_name}} </p>
+                  <p> by {{package.driver_id}} {{client.assigned_driver.first_name}}
+                    {{client.assigned_driver.last_name}} </p>
                   {{!-- <p> by {{package.deliver_by}}</p> --}}
                   <p> Thank you for using peer2peer!</p>
                   </p>
-
+               
                 </div>
                 <div class="card">
                   <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Log Out</a>
-                    <a href="#" class="card-footer-item">Send Another package</a>
+                    <a id='logout' class="card-footer-item">Log Out</a>
+                    <a href="/packages" class="card-footer-item">Send Another package</a>
                     <a href="#" class="card-footer-item">Want to be a driver?</a>
                   </footer>
                 </div>
