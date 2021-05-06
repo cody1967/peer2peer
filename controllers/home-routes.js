@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 const { Client, Driver, Package } = require('../models');
 
 
-router.get('/homepage', (req, res) => {
+router.get('/', (req, res) => {
   res.render('homepage');
 });
 
