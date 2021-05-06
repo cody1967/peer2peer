@@ -16,14 +16,6 @@
 
 
 
-#map {
-  height: 600px;
-  width: 600px;
-  align-self: center;
-  justify-self: center;
-}; 
-
-
 .hero-body { 
   background-color: #333;
   color: aliceblue;
@@ -38,4 +30,11 @@
 #logo {
   color: #FF8C00;
 }; 
+
+#map {
+  height: 600px;
+  width: 600px;
+  align-self: center;
+  justify-self: center;
+};  
 
