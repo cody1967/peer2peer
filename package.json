@@ -2,6 +2,9 @@
   "name": "peer2peer",
   "version": "1.0.0",
   "description": "A peer to peer package delivery service.",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
