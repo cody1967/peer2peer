@@ -6,11 +6,8 @@ const { Client, Driver, Package } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('homepage')
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
 });
-});
+
 
 router.get('/clients/:id', (req, res) => {
   Client.findOne({
