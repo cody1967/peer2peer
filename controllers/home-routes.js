@@ -60,8 +60,4 @@ router.get('/login', (req, res) => {
   return;
 });
 
-router.get('/', (req, res) => {
-  console.log(req.session);
-});
-
 module.exports = router;
