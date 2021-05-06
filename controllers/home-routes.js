@@ -55,10 +55,9 @@ router.get('/drivers', (req, res) => {
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/packages');
-    
+    return;
   }
   res.render('login');
-  return;
 });
 
 module.exports = router;
