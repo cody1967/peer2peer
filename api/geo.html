@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css" />
+  <title>My Geocode App</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2 id="text-center">Enter Pickup:</h2>
+    <form id="location-form">
+      <input type="text" id="location-input" class="form-control form-control-lg">
+      <br>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <div class="card-block" id="formatted-address"></div>
+    <div class="card-block" id="address-components"></div>
+    <div class="card-block" id="geometry"></div>
+    <div id="map"></div>
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeOm060a3Bkrdb_65ZXNZHH3EEXgOqlN8"
+    type="text/javascript"></script>
+  <script src="map.js"></script>
+  <script>
+    // import locations from "map.js"
+    // Call Geocode
+    //geocode();
+
+    // Get location form
+    var locationForm = document.getElementById('location-form');
+
+    // Listen for submiot
+    locationForm.addEventListener('submit', geocode);
+
+    async function geocode(e) {
+      // Prevent actual submit
+      e.preventDefault();
+
+      var location = document.getElementById('location-input').value;
+
+      var test = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: location,
+          key: 'AIzaSyAeOm060a3Bkrdb_65ZXNZHH3EEXgOqlN8'
+        }
+      })
+     
+
+
+      const { lat, lng } = test.data.results[0].geometry.location
+      const locations = [];
+      locations.push(test.data.results[0].geometry.location)
+      initMap(locations);
+      
+
+    }
+
+    
+
+
+  </script>
+
+</body>
+
+</html>

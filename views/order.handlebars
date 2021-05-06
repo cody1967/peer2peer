@@ -1,24 +1,82 @@
 <section class="hero is-fullheight-with-navbar">
   <div class="hero-body ">
     <div class="columns">
-      <div class="column is-one-third">
-        <figure class="image is-100x100">
-          <img src="/public/stylesheets/Peer2Peer Delivery Logo (1).svg">
+      <div class="column">
+        <figure class="image is-128x128">
+          <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </figure>
       </div>
+      {{!-- {{#if loggedIn}} --}}
       <div class="columns">
-        <div class="column">
-          <div class="column block level ">
-    <div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Card header
-    </p>
-    <button class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </header>
-</div>
+        <div class="column is-mobile">
+          <div class="column is-half control has-icons-left has-icons-right">
+            <label class=" column is-half label has-text-white-bis">PICK UP: Package Information</label>
+            <form class="pickup-form">
+              <input class="input block" type="text" id="pick_up_street" placeholder="Street Address">
+              <input class="input block" type="text" id="pick_up_city" placeholder="City">
+              <p class="control has-icons-left is-dark">
+              <div class="select is-medium block" placeholder="State">
+                <select id="pick_up_state">
+                  <option>UT</option>
+                  <option>AZ</option>
+                  <option>CO</option>
+                  <option>ID</option>
+                  <option>NV</option>
+                  <option>WY</option>
+                </select>
+              </div>
+              <input class="input" type="text" id="pick_up_zip" placeholder="Zip">
+              <label class=" column is-half label has-text-white-bis">DROP OFF: Package Information</label>
+              <input class="input block" type="text" id="drop_off_street" placeholder="Street Address">
+              <input class="input block" type="text" id="drop_off_city" placeholder="City">
+              <p class="control has-icons-left is-dark">
+              <div class="select is-medium block" placeholder="State">
+                <select id="drop_off_state">
+                  <option>UT</option>
+                  <option>AZ</option>
+                  <option>CO</option>
+                  <option>ID</option>
+                  <option>NV</option>
+                  <option>WY</option>
+                </select>
+              </div>
+              <input class="input" type="text" id="drop_off_zip" placeholder="Zip">
+              </p>
+
+              <div class="column is-mobile is-align-items-flex-start">
+                <label class=" column is-half label has-text-white-bis"></label>
+
+                <div class="control">
+                  <textarea class="textarea" name="comment-body" placeholder="Package Details"></textarea>
+                </div>
+              </div>
+
+              <div class="field ">
+                <div class="control">
+                  <label class="checkbox has-text-white-bis">
+                    <input type="checkbox">
+                    I agree to the <a href="#">terms and conditions</a>
+                  </label>
+                </div>
+              </div>
+              <div class="field is-grouped ">
+                <div class="control">
+                  <button class="button" type="submit">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button"><a href="/packages">Cancel</a></button>
+                </div>
+                <div class="control">
+                  <button id="my-packages" class="button">My Packages</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          {{!-- {{/if}} --}}
+
+
+        </div>
 </section>
+{{#if loggedIn}}
+<script src="/javascript/order.js"></script>
+{{/if}}

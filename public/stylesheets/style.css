@@ -5,6 +5,7 @@
   box-sizing:border-box;
 }
 
+
 .mapcontainer {
   width:100vw;
   height:100vh;
@@ -12,21 +13,28 @@
   display:grid;
 
 }
-.map {
-  width:80vw;
-  height:80vh;
-  border: 1px solid rgb(18, 22, 27);
-  align-self: center;
-  justify-self: center;
-}
 
-.hero-body {
+
+
+.hero-body { 
   background-color: #333;
+  color: aliceblue;
 };
+
 
 .button {
-  background-color: #FF8C00;
+  color: #FF8C00;
 };
 
 
+#logo {
+  color: #FF8C00;
+}; 
+
+#map {
+  height: 600px;
+  width: 600px;
+  align-self: center;
+  justify-self: center;
+};  
 

@@ -1,32 +1,56 @@
-<section class="hero is-fullheight-with-navbar">
+<section class="hero is-fullheight-with-navbar is-flex">
   <div class="hero-body ">
     <div class="columns">
       <div class="column">
-        <figure class="image is-100x100">
-          <img src="/public/stylesheets/Peer2Peer Delivery Logo (1).svg">
+        <figure class="image is-128x128">
+          <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </figure>
       </div>
-      <div class="columns">
-        <div class="column is-mobile">
-          <div class="column is-half control has-icons-left has-icons-right">
+      <div class="columns is-flex">
+        <form class="login-form">
+          <h1 class=" has-text-white ml-5 is-size-3 has-text-justified ">LOG IN</h1>
+          <div class="column is-mobile">
+            <div class="column is-half control">
+              <input class="input block" id="email-login" type="email" placeholder="Email">
+              <input class="input" type="password" id="password-login" placeholder="Password">
+            </div>
+            <label class="checkbox has-text-white-bis block ml-3">
+              <input type="checkbox">
+              Remember me
+            </label>
 
-            <p class="control has-icons-left is-dark">
-              <input class="input block" type="email" placeholder="Email">
-              <input class="input" type="password" placeholder="Password">
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock "></i>
-              </span>
-            </p>
-          </div>
-          <label class="checkbox has-text-white-bis">
-            <input type="checkbox">
-            Remember me
-          </label>
-
-
-        </div>
+            <div class="buttons block ml-3">
+              <button type="submit">
+                <a class="button">Log In</a>
+              </button>
+            </div>
+        </form>
       </div>
 
+      <form class="signup-form">
+        <h1 class=" has-text-white ml-5 is-size-3 has-text-justified ">SIGN UP</h1>
+        <div class="column is-mobile">
+          <div class="column is-half control">
+            <input class="input block" id="firstname-signup" type="text" placeholder="First Name">
+            <input class="input block" id="lastname-signup" type="text" placeholder="Last Name">
+            <input class="input block" id="email-signup" type="email" placeholder="Email">
+            <input class="input block" type="password" id="password-signup" placeholder="Password">
+          </div>
+          <label class="checkbox has-text-white-bis block ml-3">
+            <input type="checkbox">
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
 
+          <div class="buttons block ml-3">
+              <button type="submit">
+                <a class="button">Sign Up</a>
+              </button>
+
+      </form>
     </div>
+  </div>
+  </div>
+
+  </div>
 </section>
+<script src="/javascript/login.js"></script>
