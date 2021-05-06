@@ -9,7 +9,6 @@ router.get('/homepage', (req, res) => {
 });
 
 router.get('/clients/:id', (req, res) => {
-  console.log(req.session.user_id)
   Client.findOne({
       attributes: { exclude: ['password'] },
       where: {
@@ -43,7 +42,9 @@ router.get('/clients/:id', (req, res) => {
 });
 
 router.get('/packages', (req, res) => {
-  res.render('order');
+    res.render('order', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 router.get('/drivers', (req, res) => {
@@ -51,12 +52,12 @@ router.get('/drivers', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
-
+  if (req.session.loggedIn) {
+    res.redirect('/packages');
+    
+  }
   res.render('login');
+  return;
 });
 
 router.get('/', (req, res) => {
