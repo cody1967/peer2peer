@@ -1,0 +1,61 @@
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-body ">
+    <div class="columns">
+      <div class="column">
+        <figure class="image is-128x128">
+          <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
+        </figure>
+      </div>
+      <div class="columns">
+        <div class="column is-mobile">
+          <div class="column control has-icons-left has-icons-right">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Welcome {{driver.first_name}}{{driver.last_name}}
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <p>JOB LIST</p>
+                  <ol>package ID: {{package.id}}</p>
+                    <ol>Pickup Location:{{package.pick_up_street}} {{package.pick_up_city}}, {{package.pick_up_state}}
+                      {{package.pick_up_zip}}</p>
+                      <p>Drop Off Location:{{package.drop_off_street}} {{package.drop_off_city}},
+                        {{package.drop_off_state}} {{package.drop_off_zip}}</p>
+                      <p>Date and Time:{{package.deliver_by}}</p>
+                      <p>Contact: {{package.client_id}}{{client.first_name}} {{client.last_name}}</p>
+                    </ol>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="status">
+                        Delivery Ordered
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="status">
+                        In Transit
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="status">
+                        Delivered
+                      </label>
+                    </div>
+
+                    <div class="card">
+                      <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Log Out</a>
+                        <!-- <a href="#" class="card-footer-item">Delivery Complete</a> -->
+                        <!-- <a href="#" class="card-footer-item">Want to be a driver?</a> -->
+                      </footer>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</section>
+
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

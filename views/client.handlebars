@@ -1,31 +1,41 @@
+<section class="hero is-fullheight-with-navbar">
+  <div class="hero-body ">
+    <div class="columns">
+      <div class="column">
+        <figure class="image is-128x128">
+          <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
+        </figure>
+      </div>
       <div class="columns">
-          <div class="column is-mobile">
-            <div class="column control has-icons-left has-icons-right">
-              <div class="card">
-                <header class="card-header">
-                  <p class="card-header-title">
-                   Welcome {CLIENT NAME}
+        <div class="column is-mobile">
+          <div class="column control has-icons-left has-icons-right">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Welcome {{client.first_name}} {{client.last_name}}!
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  {{#each client.assigned_driver}}
+                  <p>Your package {{this.package.id}} is scheduled to be delivered</p>
+                  <p> by {{this.first_name}}
+                    {{this.last_name}} </p>
+                    {{/each}}
+                  <p> Thank you for using peer2peer!</p>
                   </p>
-                </header>
-                  <div class="card-content">
-                    <div class="content">
-                      <p>Your package {ID} is scheduled to be delivered</p> 
-                      <p> by {Driver Name} </p>
-                      <p>by {date and time}</p>
-                      <p> Thank you for using peer2peer!</p>
-                      </p>
-
-                    </div>
-                    <div class="card">
-                      <footer class="card-footer">
-                        <a href="#" class="card-footer-item">Log Out</a>
-                        <a href="#" class="card-footer-item">Send Another Package</a>
-                        <a href="#" class="card-footer-item">Want to be a Driver?</a>
-                      </footer>
-                    </div>
-                  </div>
+               
+                </div>
+                <div class="card">
+                  <footer class="card-footer">
+                    <a id='logout' class="card-footer-item">Log Out</a>
+                    <a href="/packages" class="card-footer-item">Send Another package</a>
+                    <a href="#" class="card-footer-item">Want to be a driver?</a>
+                  </footer>
                 </div>
               </div>
             </div>
-
-  </section>
+          </div>
+        </div>
+      </div>
+</section>

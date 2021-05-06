@@ -11,6 +11,10 @@ Package.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        item: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         pick_up_state: {
             type: DataTypes.STRING,
             allowNull: false
@@ -43,18 +47,13 @@ Package.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        deliver_by: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            validate: {
-                isDate: true,
-                isAfter: DataTypes.NOW
-            }
-        },
-        item: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+        // deliver_by: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: true,
+        //     validate: {
+        //         isDate: true
+        //     }
+        // },
         driver_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -79,4 +78,4 @@ Package.init(
     }
 );
 
-model.exports = Package;
+module.exports = Package;
