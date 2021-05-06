@@ -35,7 +35,5 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   },
-  "devDependencies": {
-    "https-localhost": "^4.6.4"
-  }
+  "devDependencies": {}
 }
