@@ -5,7 +5,11 @@ const { Client, Driver, Package } = require('../models');
 
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('homepage')
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.get('/clients/:id', (req, res) => {
@@ -44,7 +48,7 @@ router.get('/clients/:id', (req, res) => {
 router.get('/packages', (req, res) => {
     res.render('order', {
       loggedIn: req.session.loggedIn
-    });
+    })
 });
 
 router.get('/drivers', (req, res) => {
