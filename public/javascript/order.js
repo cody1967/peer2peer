@@ -45,6 +45,9 @@ async function orderFormHandler(event) {
 
 function myPackagesHandler(event) {
   event.preventDefault();
+  const client_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
   document.location.replace(`/clients/${client_id}`)
 }
 
@@ -54,3 +57,4 @@ myPackages.addEventListener('click', myPackagesHandler)
 
 const form = document.querySelector('.pickup-form');
 form.addEventListener('submit', orderFormHandler);
+console.log(form)
