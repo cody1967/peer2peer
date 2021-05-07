@@ -11,6 +11,7 @@ async function orderFormHandler(event) {
   const drop_off_state = document.querySelector('#drop_off_state').value;
   const drop_off_zip = document.querySelector('#drop_off_zip').value.trim();
 
+
   const client_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
