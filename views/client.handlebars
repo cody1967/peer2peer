@@ -2,9 +2,9 @@
   <div class="hero-body ">
     <div class="columns">
       <div class="column">
-        <figure class="image is-128x128">
+        <image class="">
           <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
-        </figure>
+        </image>
       </div>
       <div class="columns">
         <div class="column is-mobile">
@@ -16,13 +16,17 @@
                 </p>
               </header>
               <div class="card-content">
-                <div class="content">
+                <div class="content block">
                   {{#each client.packages}}
-                  <p>Your package containing {{this.item}} with ID# {{this.id}} is scheduled to be delivered.</p>
-                  <p>Pick-up Location: {{this.pick_up_street}}</p>
-                  <p>{{this.pick_up_city}}, {{this.pick_up_state}}</p>
-                  <p>{{this.pick_up_zip}}</p>
-                  <p>Delivered To: {{this.drop_off_street}}</p>
+                  Your package containing {{this.item}} with ID# {{this.id}} is scheduled to be delivered.
+                  <p class="block"><strong>Pick-up Location:</strong>
+                {{this.pick_up_street}}
+                {{this.pick_up_city}}, {{this.pick_up_state}}
+                {{this.pick_up_zip}} 
+                </p>
+
+                  <p class="block">
+                    Delivered To: {{this.drop_off_street}}</p>
                   <p>{{this.drop_off_city}}, {{this.drop_off_state}}</p>
                   <p>{{this.drop_off_zip}}</p>
                   <p>A driver will be assigned to your devlivery soon!</p>
