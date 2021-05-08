@@ -1,3 +1,16 @@
+.hero-body { 
+  background-color: #333;
+  color: aliceblue;
+};
+.button {
+  color: #FF8C00;
+};
+
+
+
+#logo {
+  color: #FF8C00;
+}; 
 
 *{
   margin:0;
@@ -16,20 +29,8 @@
 
 
 
-.hero-body { 
-  background-color: #333;
-  color: aliceblue;
-};
 
 
-.button {
-  color: #FF8C00;
-};
-
-
-#logo {
-  color: #FF8C00;
-}; 
 
 #map {
   height: 600px;

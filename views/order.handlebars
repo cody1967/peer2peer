@@ -9,14 +9,17 @@
       {{!--
       <div class="columns"> --}}
         <div class="column is-mobile">
-          <div class="column  control has-icons-left has-icons-right">
-            <label class="column label has-text-white-bis">
+          <div class="control has-icons-left has-icons-right">
+            <label class=" box label has-text-black-bis">
               <div>
-                <p>Welcome {{client.first_name}}!</p>
-                <p>Customer ID: <span id="client-id">{{client.id}}</span></p>
+                <p class="is-size-1 has-text-centered">Hey {{client.first_name}}!</p>
+                <p class=" is-size-3 has-text-centered">Please enter your order below. </p>
+                <p class="is-size-6 has-text-centered">Your Customer ID is: <span id="client-id">{{client.id}}</span></p>
               </div>
+            </label>
+            {{!-- <div class="is-divider" data-content=""></div> --}}
 
-              <p>PICK UP: Package Information</p>
+            <p class=" label has-text-white-bis is-size-5 has-text-centered">PICK UP INFORMATION</p>
             </label>
             <form class="pickup-form">
               <input class="input block" type="text" id="pick_up_street" placeholder="Street Address">
@@ -32,8 +35,8 @@
                   <option>WY</option>
                 </select>
               </div>
-              <input class="input" type="text" id="pick_up_zip" placeholder="Zip">
-              <label class=" column label has-text-white-bis">DROP OFF: Package Information</label>
+              <input class="input block " type="text" id="pick_up_zip" placeholder="Zip">
+              <label class=" label has-text-white-bis is-size-5 has-text-centered">DROP OFF INFORMATION </label>
               <input class="input block" type="text" id="drop_off_street" placeholder="Street Address">
               <input class="input block" type="text" id="drop_off_city" placeholder="City">
               <p class="control has-icons-left is-dark">
@@ -50,10 +53,9 @@
               <input class="input block " type="text" id="drop_off_zip" placeholder="Zip">
               </p>
 
-              <div class=" is-mobile block 
-              ">
-                <label class=" label has-text-white-bis"></label>
-
+              <div class=" is-mobile block ">
+                <label class=" label has-text-white-bis block"></label>
+<label class=" label has-text-white-bis is-size-5 has-text-centered">PACKAGE INFORMATION </label>
                 <div class="control ">
                   <textarea class="textarea" name="comment-body" placeholder="Package Details"></textarea>
                 </div>
