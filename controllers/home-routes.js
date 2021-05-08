@@ -61,24 +61,28 @@ router.get('/clients/:id', (req, res) => {
 });
 
 router.get('/packages', (req, res) => {
-  Client.findOne({
-    attributes: { include: ['id', 'first_name', 'last_name'] },
-    where: {
-      id: req.session.user_id
-    }
-  })
-  .then(dbClientData => {
-    const client = dbClientData.get({ plain: true });
-
-    res.render('order',{
-      client,
-      loggedIn: req.session.loggedIn
+  if(req.session.loggedIn) {
+    Client.findOne({
+      attributes: { include: ['id', 'first_name', 'last_name'] },
+      where: {
+        id: req.session.user_id
+      }
     })
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(dbClientData => {
+      const client = dbClientData.get({ plain: true });
+  
+      res.render('order',{
+        client,
+        loggedIn: req.session.loggedIn
+      })
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  } else {
+    res.redirect('/login')
+  }
 });
 
 
@@ -88,7 +92,7 @@ router.get('/drivers', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/packages');
+    res.redirect('/');
     return;
   }
   res.render('login');
