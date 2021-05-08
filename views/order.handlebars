@@ -6,15 +6,18 @@
           <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </image>
       </div>
-      
-      <div class="columns">
+      {{!--
+      <div class="columns"> --}}
         <div class="column is-mobile">
-          <div class="column is-half control has-icons-left has-icons-right">
-            <label class=" column is-half label has-text-white-bis">
-              <p>Welcome {{client.first_name}}!</p>
-              <p>Customer ID: <span id="client-id">{{client.id}}</span></p>
+          <div class="column  control has-icons-left has-icons-right">
+            <label class="column label has-text-white-bis">
+              <div>
+                <p>Welcome {{client.first_name}}!</p>
+                <p>Customer ID: <span id="client-id">{{client.id}}</span></p>
+              </div>
+
               <p>PICK UP: Package Information</p>
-              </label>
+            </label>
             <form class="pickup-form">
               <input class="input block" type="text" id="pick_up_street" placeholder="Street Address">
               <input class="input block" type="text" id="pick_up_city" placeholder="City">
@@ -30,7 +33,7 @@
                 </select>
               </div>
               <input class="input" type="text" id="pick_up_zip" placeholder="Zip">
-              <label class=" column is-half label has-text-white-bis">DROP OFF: Package Information</label>
+              <label class=" column label has-text-white-bis">DROP OFF: Package Information</label>
               <input class="input block" type="text" id="drop_off_street" placeholder="Street Address">
               <input class="input block" type="text" id="drop_off_city" placeholder="City">
               <p class="control has-icons-left is-dark">
@@ -44,17 +47,19 @@
                   <option>WY</option>
                 </select>
               </div>
-              <input class="input" type="text" id="drop_off_zip" placeholder="Zip">
+              <input class="input block " type="text" id="drop_off_zip" placeholder="Zip">
               </p>
 
-              <div class="column is-mobile is-align-items-flex-start">
-                <label class=" column is-half label has-text-white-bis"></label>
+              <div class=" is-mobile block 
+              ">
+                <label class=" label has-text-white-bis"></label>
 
-                <div class="control">
+                <div class="control ">
                   <textarea class="textarea" name="comment-body" placeholder="Package Details"></textarea>
                 </div>
               </div>
-              <input type="date">
+              <input class="input" id="deliver-date" type="date">
+
 
               <div class="field ">
                 <div class="control">
@@ -72,17 +77,18 @@
                   <button class="button"><a href="/packages">Cancel</a></button>
                 </div>
                 <div class="control">
-                  <button id="my-packages" class="button">My Packages</button>
+                  <a id="my-packages" class="button">My Packages</a>
                 </div>
               </div>
             </form>
           </div>
-        
 
 
-        </div>
+
+          {{!--
+        </div> --}}
+
 </section>
 {{#if loggedIn}}
 <script src="/javascript/order.js"></script>
 {{/if}}
-<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>

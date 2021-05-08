@@ -47,13 +47,13 @@ Package.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        deliver_by: {
-            type: DataTypes.DATEONLY,
-            allowNull: true,
-            validate: {
-                isDate: true
-            }
-        },
+        // deliver_by: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: true,
+        //     validate: {
+        //         isDate: true
+        //     }
+        // },
         driver_id: {
             type: DataTypes.INTEGER,
             references: {

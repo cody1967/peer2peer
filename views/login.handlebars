@@ -1,4 +1,4 @@
-<section class="hero is-fullheight-with-navbar is-flex">
+<section class="hero is-fullheight-with-navbar">
   <div class="hero-body ">
     <div class="columns">
       <div class="column">
@@ -6,11 +6,12 @@
           <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </image>
       </div>
-      <div class="columns is-flex">
+
+      <div class="column is-flex">
         <form class="login-form">
           <h1 class=" has-text-white ml-5 is-size-3 has-text-justified ">LOG IN</h1>
           <div class="column is-mobile">
-            <div class="column is-half control">
+            <div class="column control">
               <input class="input block" id="email-login" type="email" placeholder="Email">
               <input class="input" type="password" id="password-login" placeholder="Password">
             </div>
@@ -20,9 +21,13 @@
             </label>
 
             <div class="buttons block ml-3">
-              <button type="submit">
+              {{!-- <button type="submit">
                 <a class="button">Log In</a>
+              </button> --}}
+
+              <button type="submit" class="button">Log In
               </button>
+
             </div>
         </form>
       </div>
@@ -42,9 +47,12 @@
           </label>
 
           <div class="buttons block ml-3">
-            <button type="submit">
-              <a class="button">Sign Up</a>
-            </button>
+            {{!-- <button type="submit">
+              <a class="button"></a>
+            </button> --}}
+
+              <button type="submit" class="button">Sign Up
+              </button>
 
       </form>
     </div>

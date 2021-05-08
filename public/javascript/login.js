@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/packages');
+      document.location.replace('/login');
     } else {
       alert(response.statusText);
     }

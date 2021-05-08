@@ -11,12 +11,13 @@ async function orderFormHandler(event) {
   const drop_off_state = document.querySelector('#drop_off_state').value;
   const drop_off_zip = document.querySelector('#drop_off_zip').value.trim();
   const client_id = document.getElementById("client-id").textContent;
+  const deliver_by = document.getElementById("deliver-date").value;
 
   const user_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  if (item && pick_up_street && pick_up_city && pick_up_state && pick_up_zip && drop_off_street && drop_off_city && drop_off_state && drop_off_zip && client_id) {
+  if (item && pick_up_street && pick_up_city && pick_up_state && pick_up_zip && drop_off_street && drop_off_city && drop_off_state && drop_off_zip && client_id && deliver_by) {
     const response = await fetch('/api/packages', {
       method: 'post',
       body: JSON.stringify({
@@ -29,20 +30,42 @@ async function orderFormHandler(event) {
         drop_off_city,
         drop_off_state,
         drop_off_zip,
-        client_id
+        client_id,
+        deliver_by
 
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-  
+
     if (response.ok) {
       document.location.replace(`/clients/${client_id}`);
     } else {
       alert(response.statusText);
     }
   }
+
+  // // Initialize all input of type date
+  // var calendars = bulmaCalendar.attach('[type="date"]', options);
+
+  // // Loop on each calendar initialized
+  // for (var i = 0; i < calendars.length; i++) {
+  //   // Add listener to select event
+  //   calendars[i].on('select', date => {
+  //     console.log(date);
+  //   });
+  // }
+
+  // // To access to bulmaCalendar instance of an element
+  // var element = document.querySelector('#deliver-date');
+  // if (element) {
+  //   // bulmaCalendar instance is available as element.bulmaCalendar
+  //   element.bulmaCalendar.on('select', function (datepicker) {
+  //     console.log(datepicker.data.value());
+  //   });
+  // }
+
 }
 
 function myPackagesHandler(event) {
@@ -51,25 +74,7 @@ function myPackagesHandler(event) {
   document.location.replace(`/clients/${client_id}`)
 }
 
-// Initialize all input of type date
-var calendars = bulmaCalendar.attach('[type="date"]', options);
 
-// Loop on each calendar initialized
-for(var i = 0; i < calendars.length; i++) {
-	// Add listener to select event
-	calendars[i].on('select', date => {
-		console.log(date);
-	});
-}
-
-// To access to bulmaCalendar instance of an element
-var element = document.querySelector('#my-element');
-if (element) {
-	// bulmaCalendar instance is available as element.bulmaCalendar
-	element.bulmaCalendar.on('select', function(datepicker) {
-		console.log(datepicker.data.value());
-	});
-}
 
 const myPackages = document.querySelector('#my-packages');
 myPackages.addEventListener('click', myPackagesHandler)
