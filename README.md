@@ -27,7 +27,7 @@ A group project assignment to create and design a full stack website.
 ## Website
 The website can be accessed by following this link: https://peer2peer-delivery.herokuapp.com/
 
-![Website Homepage](https://github.com/cody1967/peer2peer/blob/main/assets/images/peer2peerhp.PNG?raw=true)
+![Website Homepage](./assets/images/peer2peerhp.PNG)
 
 
 ## Contribution
