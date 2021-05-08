@@ -8,28 +8,44 @@
       </div>
       <div class="columns">
         <div class="column is-mobile">
-          <div class="column control has-icons-left has-icons-right">
+          <div class=" control has-icons-left has-icons-right">
             <div class="card">
-              <header class="card-header">
-                <p class="card-header-title">
-                  Welcome {{client.first_name}} {{client.last_name}}!
+              <header class="card-header ">
+                <p class="card-header-title is-size-1 has-text-centered ">
+                  {{client.first_name}} {{client.last_name}}: Current Orders
                 </p>
               </header>
               <div class="card-content">
                 <div class="content">
                   {{#each client.packages}}
-                  <p>Your package containing {{this.item}} with ID# {{this.id}} is scheduled to be delivered {{this.deliver_by}}.</p>
-                  <p>Pick-up Location: {{this.pick_up_street}}</p>
-                  <p>{{this.pick_up_city}}, {{this.pick_up_state}}</p>
-                  <p>{{this.pick_up_zip}}</p>
-                  <p>Delivered To: {{this.drop_off_street}}</p>
-                  <p>{{this.drop_off_city}}, {{this.drop_off_state}}</p>
-                  <p>{{this.drop_off_zip}}</p>
-                  <p>A driver will be assigned to your devlivery soon!</p>
-                    {{/each}}
-                  <p> Thank you for using peer2peer!</p>
+                  <div class="box">
+                    <p class="has-text-weight-bold">Your package containing {{this.item}} with ID# {{this.id}} is
+                      scheduled to be delivered {{this.deliver_by}}.</p>
+                    <div class="columns is-mobile">
+                      <div class="column is-mobile">
+                        <p class="">Pick-up Location: </p>
+                        <address class="">
+                          {{this.pick_up_street}}
+                          {{this.pick_up_city}}, {{this.pick_up_state}}
+                          {{this.pick_up_zip}}
+                        </address>
+                      </div>
+
+                      <div class="column is-mobile">
+                        <p class="">Delivered To:</p>
+                        <address class="block">
+                          {{this.drop_off_street}}
+                          {{this.drop_off_city}}, {{this.drop_off_state}}
+                          {{this.drop_off_zip}}
+                        </address>
+                      </div>
+                      <p>A driver will be assigned to your delivery soon!</p>
+                    </div>
+                  </div>
+                  {{/each}}
+                  <p class="has-text-weight-bold has-text-centered is-size-3"> Thank you for using peer2peer!</p>
                   </p>
-               
+
                 </div>
                 <div class="card">
                   <footer class="card-footer">
