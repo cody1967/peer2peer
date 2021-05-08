@@ -6,11 +6,15 @@
           <img src="/stylesheets/Peer2Peer Delivery Logo (1).svg">
         </figure>
       </div>
-      {{!-- {{#if loggedIn}} --}}
+      
       <div class="columns">
         <div class="column is-mobile">
           <div class="column is-half control has-icons-left has-icons-right">
-            <label class=" column is-half label has-text-white-bis">PICK UP: Package Information</label>
+            <label class=" column is-half label has-text-white-bis">
+              <p>Welcome {{client.first_name}}!</p>
+              <p>Customer ID: <span id="client-id">{{client.id}}</span></p>
+              <p>PICK UP: Package Information</p>
+              </label>
             <form class="pickup-form">
               <input class="input block" type="text" id="pick_up_street" placeholder="Street Address">
               <input class="input block" type="text" id="pick_up_city" placeholder="City">
@@ -72,7 +76,7 @@
               </div>
             </form>
           </div>
-          {{!-- {{/if}} --}}
+        
 
 
         </div>

@@ -10,13 +10,13 @@ async function orderFormHandler(event) {
   const drop_off_city = document.querySelector('#drop_off_city').value.trim();
   const drop_off_state = document.querySelector('#drop_off_state').value;
   const drop_off_zip = document.querySelector('#drop_off_zip').value.trim();
+  const client_id = document.getElementById("client-id").textContent;
 
-
-  const client_id = window.location.toString().split('/')[
+  const user_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  if (item && pick_up_street && pick_up_city && pick_up_state && pick_up_zip && drop_off_street && drop_off_city && drop_off_state && drop_off_zip) {
+  if (item && pick_up_street && pick_up_city && pick_up_state && pick_up_zip && drop_off_street && drop_off_city && drop_off_state && drop_off_zip && client_id) {
     const response = await fetch('/api/packages', {
       method: 'post',
       body: JSON.stringify({
@@ -28,7 +28,8 @@ async function orderFormHandler(event) {
         drop_off_street,
         drop_off_city,
         drop_off_state,
-        drop_off_zip
+        drop_off_zip,
+        client_id
 
       }),
       headers: {
@@ -46,9 +47,7 @@ async function orderFormHandler(event) {
 
 function myPackagesHandler(event) {
   event.preventDefault();
-  const client_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  const client_id = document.getElementById("client-id").textContent;
   document.location.replace(`/clients/${client_id}`)
 }
 

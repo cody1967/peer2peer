@@ -1,15 +1,32 @@
 <section class="herohero is-halfheight">
   <div class="hero-body">
+    {{#if loggedIn}}
     <p class="title has-text-white-bis has-text-right">
-      Need your item shipped quickly?
+      Welcome, {{client.first_name}} {{client.last_name}} ID# <span id="client-id">{{client.id}}</span>!
     </p>
     <p class="subtitle has-text-white-bis has-text-right">
-      Let a peer help you out!
+      How can we help you?
     <div class="buttons is-flex-direction-row-reverse">
+      <a href="#" id="my-packages" class="button is-light">
+        <strong>My Packages</strong>
+      </a>
+      <a href="/packages" class="button is-light">
+        <strong>Send a Package</strong>
+      </a>
+      {{else}}
+      <p class="title has-text-white-bis has-text-right">
+      Need your item shipped quickly?
+      </p>
+      <p class="subtitle has-text-white-bis has-text-right">
+      Let a peer help you out!
+      <div class="buttons is-flex-direction-row-reverse">
       <a href="/login" class="button is-light">
         <strong>Sign up</strong>
       </a>
     </div>
+    {{/if}}
     <img src="/stylesheets/shutterstock_429499837.jpg" alt="Placeholder image">
   </div>
 </section>
+
+<script src="/javascript/mypackages.js"></script>

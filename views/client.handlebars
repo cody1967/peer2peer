@@ -17,16 +17,15 @@
               </header>
               <div class="card-content">
                 <div class="content">
-                  {{#each client.assigned_driver}}
-                  <p>Your package containing {{this.package.item}} with ID# {{this.package.id}} is scheduled to be delivered.</p>
-                  <p>Pick-up Location: {{this.package.pick_up_street}}</p>
-                  <p>{{this.package.pick_up_city}}, {{this.package.pick_up_state}}</p>
-                  <p>{{this.package.pick_up_zip}}</p>
-                  <p>Delivered To: {{this.package.drop_off_street}}</p>
-                  <p>{{this.package.drop_off_city}}, {{this.package.drop_off_state}}</p>
-                  <p>{{this.package.drop_off_zip}}</p>
-                  <p> Your driver will be: {{this.first_name}} {{this.last_name}}</p>
-                  <p> You may contact your driver at {{this.email}} or text {{this.cell_number}}.</p>
+                  {{#each client.packages}}
+                  <p>Your package containing {{this.item}} with ID# {{this.id}} is scheduled to be delivered.</p>
+                  <p>Pick-up Location: {{this.pick_up_street}}</p>
+                  <p>{{this.pick_up_city}}, {{this.pick_up_state}}</p>
+                  <p>{{this.pick_up_zip}}</p>
+                  <p>Delivered To: {{this.drop_off_street}}</p>
+                  <p>{{this.drop_off_city}}, {{this.drop_off_state}}</p>
+                  <p>{{this.drop_off_zip}}</p>
+                  <p>A driver will be assigned to your devlivery soon!</p>
                     {{/each}}
                   <p> Thank you for using peer2peer!</p>
                   </p>
@@ -34,7 +33,6 @@
                 </div>
                 <div class="card">
                   <footer class="card-footer">
-                    <a id='logout' class="card-footer-item">Log Out</a>
                     <a href="/packages" class="card-footer-item">Send Another package</a>
                     <a href="#" class="card-footer-item">Want to be a driver?</a>
                   </footer>

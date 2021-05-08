@@ -5,7 +5,28 @@ const { Client, Driver, Package } = require('../models');
 
 
 router.get('/', (req, res) => {
-  res.render('homepage')
+  if(req.session.loggedIn){
+    Client.findOne({
+      attributes: { include: ['id', 'first_name', 'last_name'] },
+      where: {
+        id: req.session.user_id
+      }
+    })
+    .then(dbClientData => {
+      const client = dbClientData.get({ plain: true });
+  
+      res.render('homepage',{
+        client,
+        loggedIn: req.session.loggedIn
+      })
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  } else {
+    res.render('homepage')
+  }
 });
 
 
@@ -17,10 +38,7 @@ router.get('/clients/:id', (req, res) => {
       },
       include: [
           {
-              model: Driver,
-              attributes: ['first_name', 'last_name', 'email', 'cell_number'],
-              through: Package,
-              as: 'assigned_driver'
+              model: Package
           }
       ]
   })
@@ -43,10 +61,26 @@ router.get('/clients/:id', (req, res) => {
 });
 
 router.get('/packages', (req, res) => {
-    res.render('order', {
+  Client.findOne({
+    attributes: { include: ['id', 'first_name', 'last_name'] },
+    where: {
+      id: req.session.user_id
+    }
+  })
+  .then(dbClientData => {
+    const client = dbClientData.get({ plain: true });
+
+    res.render('order',{
+      client,
       loggedIn: req.session.loggedIn
     })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
+
 
 router.get('/drivers', (req, res) => {
   res.render('driver');

@@ -63,9 +63,13 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
+        {{#if loggedIn}}
+        <div id="logout" class="buttons">
+          <a href="#" class="button is-dark">Logout</a>
+          {{else}}
+          <div class="buttons">
           <a href="/login" class="button is-dark">Log In</a>
- 
+          {{/if}}
         </div>
       </div>
     </div>

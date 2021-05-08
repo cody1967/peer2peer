@@ -22,10 +22,7 @@ router.get('/:id', (req, res) => {
         },
         include: [
             {
-                model: Driver,
-                attributes: ['first_name', 'last_name', 'email', 'cell_number'],
-                through: Package,
-                as: 'assigned_driver'
+                model: Package
             }
         ]
     })
